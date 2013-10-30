@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Welcome to URL Shortener</h1>
+
+  <form action="/urls" method="post">
+    <p><label for="URL:">Url:</label>
+       <input id="URL" type="text" name="main_url">  </p>
+       <input type="submit" value="save">
+  </form>
+
+  <h3><% Url.all.each do |link| %></h3>
+      <p>Main Link:  <%=link.main_url%><br><br>
+      Short Link: <a href="<%=link.short_url%>"><%=link.short_url%></a>
+      Counter: <%=link.counter%> </p>
+      <% end %>
+</div>
+
